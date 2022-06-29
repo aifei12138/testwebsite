@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>信容教育</title>
+		<meta name="keywords" content="信容教育">
+		<meta name="description" content="信容教育">
+		<link rel="stylesheet" href="res/layui/css/layui.css">
+		<link rel="stylesheet" href="res/static/css/index.css">
+
+		<style>
+			a{transition: all 0.5s}
+      .main_link_box li:hover>a{
+        color:#18a0f7;
+      }
+      .main_news li a{
+        display: inline-block;
+        width: 300px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .main_news li:hover a{
+        color: #18a0f7;
+      }
+      
+   
+     #imgH{
+       height: 640px;
+     }
+     /* #imgH>div{
+       height: 640px;
+     }
+     .layui-carousel>[carousel-item]>.layui-this{
+       height: 640px;
+     } */
+    /* #imgH img{
+       height: 100%;
+     } */
+	 .hide{
+	 display:none;
+	 }
+	 
+	 #tab_t .act{
+		color: #0175c2;
+	 }
+	
+  </style>
+	</head>
+	<body>
+		<!-- nav部分 -->
+		<div class="nav index">
+			<script src="res/static/js/header.js"></script>
+		</div>
+		<!-- banner部分 -->
+
+		<div class="layui-fluid" style="margin-top:80px;padding: 0;">
+			<div class="layui-row">
+				<div class="layui-col-md12 layui-col-xs12" style="margin-bottom:20px;">
+					<div class=" layui-carousel" id="index_lb">
+						<div carousel-item="" id="imgH">
+							<div><img src="res/static/img/xxfa-banner1.png" alt=""></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-fluid">
+			<div class="layui-main xxfa-box">
+				<div class="xxfa-top">
+					<h3>教育教学平台建设</h3>
+					<ul>
+						<li>智慧教育教学平台</li>
+						<li>教研管理系统</li>
+						<li>考务管理系统</li>
+						<li>智慧互动课堂</li>
+					</ul>
+				</div>
+				<div class="xxfa-con wrap">
+					<h3>基础建设与智能化</h3>
+					<ul id="tab_t">
+						<li class="xxfa-larr act">新高考系统</li>
+						<li>校园一卡通系统</li>
+						<li>校园安全综合监管平台</li>
+						<li>大数据可视化平台</li>
+						<li>智慧校车</li>
+					</ul>
+					<div id="tab_c">
+						<div class="list-xxfa">
+							<img src="res/static/img/xxfa3.png">
+						</div>
+						<div class="list-xxfa hide">
+							<img src="res/static/img/xxfa2.png">
+						</div>
+						<div class="list-xxfa hide">
+							<img src="res/static/img/xxfa4.png">
+						</div>
+						<div class="list-xxfa hide">
+							<img src="res/static/img/xxfa5.png">
+						</div>
+						<div class="list-xxfa hide">
+							<img src="res/static/img/xxfa1.png">
+						</div>
+					</div>
+					
+					
+					
+					
+				</div>
+				
+				<div class="xxfa-foo">
+					<h3>更多应用方案</h3>
+					<ul>
+						<li>班班通<br>（教育教学）</li>
+						<li>教育信息化<br>支撑网络</li>
+						<li style="padding-top: 30px;height: 62px;">心理咨询室</li>
+						<li>视频会议系统<br>（一校带多校）</li>
+						<li style="padding-top: 30px;height: 62px;">录播系统</li>
+						<li>校园物联网<br>系统</li>
+						<li>视频监控<br>管理系统</li>
+						<li>数字图书馆<br>与智慧图书馆</li>
+						<li>设备管理<br>系统</li>
+						<li>校园管理<br>平台</li>
+						<li>教育大数据<br>平台</li>
+						<li>系统资产管理<br>平台</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+		<!-- footer部分 -->
+		<div class="layui-fluid  main_footer">
+		    <script src="res/static/js/footer.js"></script>
+		</div>
+
+
+		<script src="res/layui/layui.all.js"></script>
+		<script src="res/static/js/jquery-3.1.1.min.js"></script>
+
+		<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+		<script>
+			layui.config({
+				base: 'res/static/js/'
+			}).use('firm');
+		</script>
+
+		<script type="text/javascript">
+			$(".xxfa-con li").click(function() {
+				$(this).addClass("xxfa-larr").siblings().removeClass('xxfa-larr');
+				$(".xxfa-con .list-xxfa").hide().eq($(this).index()).show();
+			});
+		</script>
+
+
+
+		<script>
+			layui.use('carousel', function() {
+				var carousel = layui.carousel;
+				//建造实例
+				carousel.render({
+					elem: '#index_lb'
+						//设置容器宽度
+						,
+					width: "100%",
+					height: 'auto',
+					indicator: 'inside' //dian
+						,
+					anim: 'fade' //切换动画方式
+						,
+					arrow: "hover" //始终显示箭头
+				});
+			});
+
+
+			// //轮播高度自适应
+			window.onload=function(){
+				var imgH = document.getElementById('index_lb').querySelector('.layui-this').offsetHeight;
+				  console.log(imgH)
+				  document.getElementById('imgH').style.height = imgH + 'px';
+			}
+		</script>
+		<script>
+		window.onload = function(){
+		 tab("tab_t","li","tab_c","div","onmouseover")
+		 function tab(tab_t,tab_t_tag,tab_c,tag_c_tag,evt){
+		  var tab_t = document.getElementById(tab_t);
+		  var tab_t_li = tab_t.getElementsByTagName(tab_t_tag);
+		  var tab_c = document.getElementById(tab_c);
+		  var tab_c_li = tab_c.getElementsByTagName(tag_c_tag);
+		  var len = tab_t_li.length;
+		  var i=0;
+		  var timer = null;
+		  var num=0;
+		   for(i=0; i<len; i++){
+		    tab_t_li[i].index = i;
+		    tab_t_li[i][evt] = function(){
+		     clearInterval(timer);
+		     num = this.index;
+		     tab_change()
+		    }
+		    tab_t_li[i].onmouseout = function(){
+		     autoplay();
+		    }
+		   }
+		  function tab_change(){
+		   for(i=0; i<len; i++){
+		    tab_t_li[i].className = '';
+		    tab_c_li[i].className = 'hide';
+		   }
+		   tab_t_li[num].className = 'act';
+		   tab_c_li[num].className = '';
+		  }
+		  function autoplay(){
+		   timer = setInterval(function(){
+		    num++;
+		    if(num>=len) num=0;
+		    tab_change();
+		   },6000);
+		  }
+		  autoplay();
+		 }
+		}
+		</script>
+		<script type="text/javascript">
+			  
+			   function IEVersion() {
+			            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+			            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+			            var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+			            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+			            if(isIE) {
+			                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+			                reIE.test(userAgent);
+			                var fIEVersion = parseFloat(RegExp["$1"]);
+							console.log(fIEVersion);
+							if(fIEVersion<10){
+								$('body').html('');
+								document.write('<div style="position:fixed;top:0;left:0;z-index:999;width:100%;height:100%;background:url(res/static/img/ie-bg.png) no-repeat center;background-size:cover;text-align:center;"><div style="position:absolute;width:100%;line-height:50px;margin:auto;top:30%;font-size:32px;color:#333">抱歉，您的浏览器版本太低，建议您升级浏览器，推荐谷歌浏览器&nbsp;<br/><br/><div>1、Windows 7及以上版本操作系统<a href="https://sm.myapp.com/original/Browser/75.0.3770.142_chrome_installer_32.exe"><font color="brownish red">(请点我下载)</font></a><br/>2、Windows XP操作系统<a href="https://sm.myapp.com/original/Browser/49.0.2623.75_chrome_installer.exe"><font color="brownish red">(请点我下载)</font></a><br/>3、Mac OS 操作系统<a href="https://sm.myapp.com/original/Browser/googlechrome.dmg"><font color="brownish red">(请点我下载)</font></a><br/></div></div></div>');
+								 
+							}
+			                if(fIEVersion == 7) {
+			                    return 7;
+			                } else if(fIEVersion == 8) {
+			                    return 8;
+			                } else if(fIEVersion == 9) {
+			                    return 9;
+			                } else if(fIEVersion == 10) {
+			                    return 10;
+			                } else {
+			                    return 6;//IE版本<=7
+			                }   
+			            } else if(isEdge) {
+			                return 'edge';//edge
+			            } else if(isIE11) {
+			                return 11; //IE11  
+			            }else{
+			                return -1;//不是ie浏览器
+			            }
+			        }
+					IEVersion();
+		</script>
+	</body>
+</html>

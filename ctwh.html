@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ 
+  <title>信容教育</title>
+  <meta name="keywords" content="信容教育">
+  <meta name="description" content="信容教育">
+  <link rel="stylesheet" href="res/layui/css/layui.css">
+  <link rel="stylesheet" href="res/static/css/index.css">
+  
+  <style>
+      a{transition: all 0.5s}
+      .main_link_box li:hover>a{
+        color:#18a0f7;
+      }
+      .main_news li a{
+        display: inline-block;
+        width: 300px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .main_news li:hover a{
+        color: #18a0f7;
+      }
+      
+   
+     #imgH{
+       height: 640px;
+     }
+   /*  #imgH>div{
+       height: 640px;
+     }
+     .layui-carousel>[carousel-item]>.layui-this{
+       height: 640px;
+     } */
+    /* #imgH img{
+       height: 100%;
+     } */
+  </style>
+</head>
+<body>
+  <!-- nav部分 -->
+  <div class="nav index">
+    <script src="res/static/js/header.js"></script>
+  </div>
+  <!-- banner部分 -->
+  
+  <div class="layui-fluid" style="margin-top:80px;padding: 0;">
+      <div class="layui-row">
+          <div class="layui-col-md12 layui-col-xs12" style="margin-bottom:20px;">
+              <div class=" layui-carousel" id="index_lb">
+                  <div carousel-item="" id="imgH">
+                    <div><img src="res/static/img/ctwh-ban1.png" alt=""></div>
+					
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="layui-fluid">
+		<div class="layui-main ctwh-con">
+			<p><span>文化自信</span>是一个国家、一个民族发展中更基本、更深沉、更持久的力量。</p>
+			<p style="text-align: right;padding-right: 200px;">——习近平</p>
+			<img src="res/static/img/ctwh1.png" style="display:block;margin:80px auto;">
+			<div class="ctwh-img">
+				<h3>戏曲进校园整体解决方案</h3>
+				<img src="res/static/img/ctwh2.png">
+			</div>
+			<ul class="ctwh-ul">
+				<li>
+					<h3>智能交互一体机</h3>
+					<p style="margin-bottom: 50px;">智能交互一体机，是一款整合了戏曲课程资源、触摸互动系统、一体化音响的多媒体设备，通过高清屏与无线传屏互联互通，用于戏曲文化教学与普及。多种款式，内置网络接口及WIFI,适用于教室、楼道、墙壁等公共区域。</p>
+					<img src="res/static/img/l_ctwh1.png">
+				</li>
+				<li>
+					<h3>戏匣子</h3>
+					<p style="margin-bottom: 56px;">“戏匣子”内置网络接口、WIFI、 HDMI音视频接口，可方便的与教室的音视频设备集成。机顶盒内置大容量存储，所有教学资源通过网络下载到本地存储，视频流畅。能作为传统戏曲文化教室的内容支撑，学校可利用视频教学资源开设戏曲课程。
+</p>
+					<img src="res/static/img/l_ctwh2.png">
+				</li>
+				<li>
+					<h3>“戏趣”APP</h3>
+					<p style="margin-bottom: 10px;">制定智能平板、手机端教学系统软件，以丰富的教学资源库、知识素材库为保障，通过大数据、云计算、物联网等信息技术手段，构建具有互动个性化智能的戏曲学习智慧课堂/电子书包，提高孩子学习兴趣、戏曲知识理解。</p>
+					<img src="res/static/img/l_ctwh3.png">
+				</li>
+				<li>
+					<h3>多媒体终端开发</h3>
+					<p style="margin-bottom: 120px;">WEB端特别增设了“传统文化扩展学习模块，满足广大师生对中华传统文化学习的需要。方便老师、学生利用课余时间深入学习。
+</p>
+					<img src="res/static/img/l_ctwh4.png">
+				</li>
+			</ul>
+		</div>
+  </div>
+  
+  
+  
+
+  
+
+   
+  
+  <!-- footer部分 -->
+ <div class="layui-fluid  main_footer">
+     <script src="res/static/js/footer.js"></script>
+ </div>
+  
+  
+<script src="res/layui/layui.all.js"></script>
+<script src="res/static/js/jquery-3.1.1.min.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: 'res/static/js/' 
+  }).use('firm'); 
+</script>
+
+<script>
+  layui.use('carousel', function () {
+    var carousel = layui.carousel;
+    //建造实例
+    carousel.render({
+      elem: '#index_lb'
+     //设置容器宽度
+      ,width :"100%"
+      ,height:'auto'
+      ,indicator:'inside'//dian
+      ,anim: 'fade' //切换动画方式
+      ,arrow: "hover"//始终显示箭头
+    });
+  });
+
+
+// //轮播高度自适应
+window.onload=function(){
+				var imgH = document.getElementById('index_lb').querySelector('.layui-this').offsetHeight;
+				  console.log(imgH)
+				  document.getElementById('imgH').style.height = imgH + 'px';
+			}
+   
+</script>
+<script type="text/javascript">
+	  
+	   function IEVersion() {
+	            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+	            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+	            var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+	            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+	            if(isIE) {
+	                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+	                reIE.test(userAgent);
+	                var fIEVersion = parseFloat(RegExp["$1"]);
+					console.log(fIEVersion);
+					if(fIEVersion<10){
+						$('body').html('');
+						document.write('<div style="position:fixed;top:0;left:0;z-index:999;width:100%;height:100%;background:url(res/static/img/ie-bg.png) no-repeat center;background-size:cover;text-align:center;"><div style="position:absolute;width:100%;line-height:50px;margin:auto;top:30%;font-size:32px;color:#333">抱歉，您的浏览器版本太低，建议您升级浏览器，推荐谷歌浏览器&nbsp;<br/><br/><div>1、Windows 7及以上版本操作系统<a href="https://sm.myapp.com/original/Browser/75.0.3770.142_chrome_installer_32.exe"><font color="brownish red">(请点我下载)</font></a><br/>2、Windows XP操作系统<a href="https://sm.myapp.com/original/Browser/49.0.2623.75_chrome_installer.exe"><font color="brownish red">(请点我下载)</font></a><br/>3、Mac OS 操作系统<a href="https://sm.myapp.com/original/Browser/googlechrome.dmg"><font color="brownish red">(请点我下载)</font></a><br/></div></div></div>');
+						 
+					}
+	                if(fIEVersion == 7) {
+	                    return 7;
+	                } else if(fIEVersion == 8) {
+	                    return 8;
+	                } else if(fIEVersion == 9) {
+	                    return 9;
+	                } else if(fIEVersion == 10) {
+	                    return 10;
+	                } else {
+	                    return 6;//IE版本<=7
+	                }   
+	            } else if(isEdge) {
+	                return 'edge';//edge
+	            } else if(isIE11) {
+	                return 11; //IE11  
+	            }else{
+	                return -1;//不是ie浏览器
+	            }
+	        }
+			IEVersion();
+</script>
+</body>
+</html>
